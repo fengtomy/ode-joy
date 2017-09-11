@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>和欢乐颂五美一起聊爱情！</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="adress=no">
+    <meta name="flexible" content="initial-dpr=1">
+    <!--移动适配框架，必须优先载入-->
+    <script src="assets/js/flexible.min.js"></script>
+    <!--移动适配框架，必须优先载入-->
+    <link href="assets/css/swiper-3.3.1.min.css" rel="stylesheet">
+    <link href="assets/css/style.min.css" rel="stylesheet">
+    <!--百度统计代码-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?410574a789bd462b194c1e611664845e";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!--百度统计代码-->
+</head>
+<body>
+<!--微信分享缩略图-->
+<div id="wx-share-thumb">
+    <img src="assets/img/wx-share.jpg">
+</div>
+
+<!--音效-->
+<div style="display: none">
+    <audio preload="auto" src="assets/audio/send.mp3" id="send"></audio>
+</div>
+
+<!--角色选择界面-->
+<div class="selection" style="display: none;">
+    <div class="title"></div>
+    <div class="swiper-container select-role">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" id="role-1"></div>
+            <div class="swiper-slide" id="role-2"></div>
+            <div class="swiper-slide" id="role-3"></div>
+            <div class="swiper-slide" id="role-4"></div>
+            <div class="swiper-slide" id="role-5"></div>
+        </div>
+    </div>
+</div>
+
+<!--微信聊天界面-->
+<div class="wechat-option" style="display: none">
+    <div class="wechat" id="qyy" style="display: none;">
+        <div class="wechat-content">
+            <div class="chat-me">
+                <div class="font-28 chat-frame">姐妹们！我刚刚在店里看到一个超级大帅哥！</div>
+                <div class="chat-user user-qyy"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-gwe"></div>
+                <div class="font-28 chat-frame">有多帅啊<span class="emoji-xs"></span></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">小蚯蚓你又犯花痴啊</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">有我家赵医生帅吗？</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">是我喜欢的类型啊，好MAN！<span class="emoji-xh"></span></div>
+                <div class="chat-user user-qyy"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">就你那品味，得了吧。你还觉得白主管帅呢</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">樊大姐，你怎么哪壶不开提哪壶啊？<span class="emoji-fn"></span></div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">别和我提白主管那个渣男！来气！</div>
+                <div class="chat-user user-qyy"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-gwe"></div>
+                <div class="font-28 chat-frame">小蚯蚓，别生气了啦</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-gwe"></div>
+                <div class="font-28 chat-frame"><img src="assets/img/user-face.jpg" class="full-width"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-ad"></div>
+                <div class="font-28 chat-frame">小蚯蚓，上班时间聊天小心又被你老板骂</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">最近老板不在 <span class="emoji-my"></span> 我上班还偷偷看小说呢，哈哈哈</div>
+                <div class="chat-user user-qyy"></div>
+            </div>
+        </div>
+        <div class="wechat-input">
+            <div class="font-26 input-content"></div>
+            <div class="btn-tip"></div>
+        </div>
+    </div>
+    <div class="wechat" id="gwe" style="display: none;">
+        <div class="wechat-content">
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">姐妹们，你们说赵医生为什么不理我</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">夏虫不语于冰呗</div>
+                <div class="chat-user user-gwe"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-ad"></div>
+                <div class="font-28 chat-frame">井蛙不可语于海</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">你们能不能说人话！</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qyy"></div>
+                <div class="font-28 chat-frame">哈哈哈哈</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">小蚯蚓你笑什么笑，你知道他们什么意思啊！</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qyy"></div>
+                <div class="font-28 chat-frame">…我也不知道… <span class="emoji-ka"></span></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">你这么霸道刁钻，赵医生这样的文化人怎么会喜欢呢</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">就是，赵医生是个很有品味，很讲究底蕴的人</div>
+                <div class="chat-user user-gwe"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qyy"></div>
+                <div class="font-28 chat-frame">咦？关关，你好像很了解赵医生嘛</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">没有没有，我就是感觉他是这样的人</div>
+                <div class="chat-user user-gwe"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-ad"></div>
+                <div class="font-28 chat-frame">关关，赶紧出门上班了，我在楼下等你</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">谢谢安迪姐！</div>
+                <div class="chat-user user-gwe"></div>
+            </div>
+        </div>
+        <div class="wechat-input">
+            <div class="font-26 input-content"></div>
+            <div class="btn-tip"></div>
+        </div>
+    </div>
+    <div class="wechat" id="qxx" style="display: none;">
+        <div class="wechat-content">
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">我晚上要去一个饭局，有谁跟我一起去吗？</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qyy"></div>
+                <div class="font-28 chat-frame">有好吃的吗？</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">樊大姐，你都一把年纪了，又去给人家当“菜”啊？</div>
+                <div class="chat-user user-qxx"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">小曲你… <span class="emoji-fn"></span></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-gwe"></div>
+                <div class="font-28 chat-frame">樊姐，我不去了，我要加班</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-gwe"></div>
+                <div class="font-28 chat-frame"><img src="assets/img/user-face-2.jpg" class="full-width"></div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">我可没空跟你玩儿，我晚上要找我的赵医生去</div>
+                <div class="chat-user user-qxx"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">人家都嫌你烦了你还去</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">在男女的关系中，女方如果在男方面前没有了姿态，那男方是不会正眼瞧你的</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">就你姿态高，成天的掐尖儿，也没见你把自己嫁出去啊</div>
+                <div class="chat-user user-qxx"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qyy"></div>
+                <div class="font-28 chat-frame">曲筱绡你别老是欺负我们樊姐</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-ad"></div>
+                <div class="font-28 chat-frame">发生了什么？</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">安迪，我要抱抱，她们都欺负我</div>
+                <div class="chat-user user-qxx"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-ad"></div>
+                <div class="font-28 chat-frame">这世界上居然有人能欺负到你吗？</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">不跟你们废话了，我要去吃我的唐僧肉了 <span class="emoji-fw"></span></div>
+                <div class="chat-user user-qxx"></div>
+            </div>
+        </div>
+        <div class="wechat-input">
+            <div class="font-26 input-content"></div>
+            <div class="btn-tip"></div>
+        </div>
+    </div>
+    <div class="wechat" id="ad" style="display: none;">
+        <div class="wechat-content">
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">安迪安迪安迪安迪 <span class="emoji-gth"></span> <span class="emoji-gth"></span>
+                    <span class="emoji-gth"></span></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">一大早的干嘛呢这是，破坏我的美容觉（翻白眼）</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">？</div>
+                <div class="chat-user user-ad"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">我正和客户吃饭呢，他们的产品马马虎虎，英文怎么说啊？</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qyy"></div>
+                <div class="font-28 chat-frame">马马虎虎简单啊！horse horse tiger tiger</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-gwe"></div>
+                <div class="font-28 chat-frame">哈哈哈，小邱你别瞎说啦</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">小曲你还是好好学学英文吧</div>
+                <div class="chat-user user-ad"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-fsm"></div>
+                <div class="font-28 chat-frame">她撩赵医生还来不及，哪里会有空学英文啊</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qyy"></div>
+                <div class="font-28 chat-frame">关关你为什么说我瞎说啊，我觉得翻的很对啊</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-gwe"></div>
+                <div class="font-28 chat-frame"><span class="emoji-lh"></span></div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">小曲啊，赵医生可是喜欢文化人的哦，这样，我书房借给你了。</div>
+                <div class="chat-user user-ad"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">本小姐靠颜值拿下他</div>
+            </div>
+        </div>
+        <div class="wechat-input">
+            <div class="font-26 input-content"></div>
+            <div class="btn-tip"></div>
+        </div>
+    </div>
+    <div class="wechat" id="fsm" style="display: none;">
+        <div class="wechat-content">
+            <div class="chat-other">
+                <div class="chat-user user-ad"></div>
+                <div class="font-28 chat-frame">小樊，听说你父亲生病了？</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qyy"></div>
+                <div class="font-28 chat-frame">是啊是啊，安迪姐，樊姐最近为了这个可心烦了</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">姐妹们放心吧，我没事 <span class="emoji-z"></span></div>
+                <div class="chat-user user-fsm"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">樊大姐你就别硬撑了，有什么困难和我们说，能帮肯定帮的</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-gwe"></div>
+                <div class="font-28 chat-frame">你们可是不知道啊，她的小王同学最近来的可勤快了 <span class="emoji-tw"></span></div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">关关你瞎说什么呢，人家就是热心而已</div>
+                <div class="chat-user user-fsm"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-ad"></div>
+                <div class="font-28 chat-frame">我看这个王同学啊，对你是挺上心的</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">就是啊樊大姐，你都一把年纪了，遇到个真心的就不容易了</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">我这家里乌烟瘴气的，以前又这么对他，他怎么可能还看得上我 <span class="emoji-ll"></span></div>
+                <div class="chat-user user-fsm"></div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-qxx"></div>
+                <div class="font-28 chat-frame">啊哟，樊大姐还有不自信的时候啊~</div>
+            </div>
+            <div class="chat-other">
+                <div class="chat-user user-ad"></div>
+                <div class="font-28 chat-frame">小樊，我觉得你应该接受王柏川，他对你一片真心，你可不要辜负了。</div>
+            </div>
+            <div class="chat-me">
+                <div class="font-28 chat-frame">其实我心里也挺矛盾的，以前真不该那样对他 <span class="emoji-hp"></span></div>
+                <div class="chat-user user-fsm"></div>
+            </div>
+        </div>
+        <div class="wechat-input">
+            <div class="font-26 input-content"></div>
+            <div class="btn-tip"></div>
+        </div>
+    </div>
+</div>
+
+<!--结果页面-->
+<div class="result" style="display: none">
+    <div class="result-btn">
+        <div id="btn-1"></div>
+        <div id="btn-2"></div>
+        <div id="btn-share"></div>
+    </div>
+</div>
+
+<!--分享遮罩层-->
+<div id="mark_ios"></div>
+<div id="mark_android"></div>
+
+<!--JS脚本载入-->
+<div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/swiper-3.3.1.jquery.min.js"></script>
+    <script src="assets/js/jquery.typetype.min.js"></script>
+    <script src="assets/js/pageCtrl.min.js"></script>
+</div>
+</body>
+</html>
